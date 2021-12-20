@@ -13,7 +13,7 @@ Thamme Gowda, http://isi.edu/~tg[]
 :hide-uri-scheme:
 :docinfo2:
 :icons: font
-:source-highlighter: rouge
+//:source-highlighter: rouge
 
 
 
