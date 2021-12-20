@@ -1,0 +1,2 @@
+# shellspells
+Unix shell spells
