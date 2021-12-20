@@ -1,0 +1,5 @@
+# Shell Spells
+
+spell
+`/spel/`
+
