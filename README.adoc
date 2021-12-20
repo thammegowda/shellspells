@@ -1,12 +1,23 @@
 = Shell Spells
-Thamme Gowda, http://isi.edu/~tg
-:doctype: article
+Thamme Gowda, http://isi.edu/~tg[]
+:doctype: book
+:encoding: utf-8
+:lang: en
+:toc:
+:toclevels: 3
+:sectnums:
+:sectnumlevels: 4
+:data-uri:
 :toc: left
 :figure-caption!:
 :hide-uri-scheme:
+:docinfo2:
+:icons: font
+:source-highlighter: rouge
 
 
-.Spell, /spel/, _noun_,a form of words used as a magical charm or incantation.
+
+.Spell, /spel/, _noun_, a form of words used as a magical charm or incantation.
 image::define-spell.png["Spell definition", 640]
 
 
@@ -51,7 +62,8 @@ rm -v !("filename1"|"filename2")  # multiple exclusions
 
 [source,bash]
 ----
-set -euxo pipefail
+set -euo pipefail # recommended
+set -euxo pipefail # for debugging
 ----
 
 `-e` exits on error, `-u` errors on undefined variables, `-x` for echoing each statement, and `-o pipefail` exits on command pipe failures.
@@ -60,11 +72,11 @@ set -euxo pipefail
 . https://stackoverflow.com/a/2871034/1506477
 
 
-== Get an Open Port
+== Get Free Port
 
 Trying to bind to port `0` makes the kernel allocate a free port.
 
-[source,bash]
+[source,python]
 ----
 import socket
 
@@ -75,7 +87,7 @@ print(addr[1])
 s.close()
 ----
 
-Or, in shell:
+Shell one-liner:
 [source,bash]
 ----
 PORT=$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()')
