@@ -5,8 +5,8 @@ Thamme Gowda, http://isi.edu/~tg[]
 :lang: en
 :toc:
 :toclevels: 3
-:sectnums:
-:sectnumlevels: 4
+//:sectnums:
+//:sectnumlevels: 4
 :data-uri:
 :toc: left
 :figure-caption!:
@@ -16,9 +16,12 @@ Thamme Gowda, http://isi.edu/~tg[]
 //:source-highlighter: rouge
 
 
-
 .Spell, /spel/, _noun_, a form of words used as a magical charm or incantation.
 image::define-spell.png["Spell definition", 640]
+
+---
+
+A bunch of unix spells, sorted in no definite order. 
 
 
 [#gnu-parallel]
@@ -93,3 +96,11 @@ Shell one-liner:
 PORT=$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()')
 echo $PORT
 ----
+
+[#lastmod-files]
+
+== Find Files Modified in Last Hour
+
+https://stackoverflow.com/a/33407491/1506477
+
+   find . -mmin -60 -type f -exec ls -l {} +
