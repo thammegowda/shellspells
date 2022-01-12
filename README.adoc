@@ -66,13 +66,19 @@ rm -v !("filename1"|"filename2")  # multiple exclusions
 [source,bash]
 ----
 set -euo pipefail # recommended
-set -euxo pipefail # for debugging
+set -euxo pipefail # Adding "x" prints out debugging statement
 ----
 
 `-e` exits on error, `-u` errors on undefined variables, `-x` for echoing each statement, and `-o pipefail` exits on command pipe failures.
 
+If `set -x` wasnt enough to debug, and you like to get more info
+
+    export PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
+
+
 . https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
 . https://stackoverflow.com/a/2871034/1506477
+. https://stackoverflow.com/a/17805088/1506477 
 
 
 == Get Free Port
